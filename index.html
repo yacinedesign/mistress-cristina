@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mistress Cristina</title>
+<meta name="description" content="Mistress Cristina · Dominación BDSM profesional. Sesiones virtuales desde España y presenciales en Colombia. Solo para mayores de 18 años.">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Mistress Cristina">
+<meta property="og:title" content="Mistress Cristina · Dominación BDSM">
+<meta property="og:description" content="Sesiones virtuales desde España y presenciales en Colombia. Solo para mayores de 18 años.">
+<meta property="og:image" content="img/og-cristina.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="rating" content="RTA-5042-1996-1400-1577-RTA">
+<meta name="rating" content="adult">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0708;
+    --bg-2: #140c0e;
+    --card: #1a1012;
+    --line: #3a1c21;
+    --text: #f1e9e6;
+    --muted: #b7a6a3;
+    --red: #c4121f;
+    --red-2: #e3303c;
+    --gold: #c9a45c;
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Inter", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.65; overflow-x: hidden; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  body.locked { overflow: hidden; }
+
+  /* ---------- Aviso +18 ---------- */
+  #gate { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 16px;
+    background: radial-gradient(ellipse at center, rgba(90,10,18,.55), rgba(5,3,4,.97) 70%), var(--bg); }
+  #gate .box { max-width: 460px; text-align: center; border: 1px solid var(--line); background: rgba(20,12,14,.9); padding: 44px 32px; }
+  #gate .mono { font-family: var(--serif); font-size: 15px; letter-spacing: .4em; color: var(--gold); text-transform: uppercase; }
+  #gate h2 { font-family: var(--serif); font-size: 40px; font-weight: 500; margin: 10px 0 14px; }
+  #gate p { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  #gate .row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  #gate.hide { display: none; }
+
+  /* ---------- Botones ---------- */
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 26px; font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; border: 1px solid var(--red); background: var(--red); color: #fff; cursor: pointer; transition: background .2s, border-color .2s, transform .2s; font-family: var(--sans); }
+  .btn:hover { background: var(--red-2); border-color: var(--red-2); transform: translateY(-1px); }
+  .btn.ghost { background: transparent; border-color: #5a3a3f; color: var(--text); }
+  .btn.ghost:hover { border-color: var(--gold); color: var(--gold); background: transparent; }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+
+  /* ---------- Cabecera ---------- */
+  header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 18px clamp(16px, 4vw, 48px); transition: background .3s, padding .3s; }
+  header.solid { background: rgba(11,7,8,.92); backdrop-filter: blur(8px); padding-top: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .logo { font-family: var(--serif); font-size: 24px; font-weight: 600; letter-spacing: .04em; }
+  .logo span { color: var(--red-2); font-style: italic; }
+  nav { display: flex; gap: 28px; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; }
+  nav a { color: var(--muted); transition: color .2s; }
+  nav a:hover { color: var(--text); }
+  @media (max-width: 860px) { nav { display: none; } }
+
+  /* ---------- Portada ---------- */
+  .hero { position: relative; min-height: 100vh; min-height: 100svh; display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 75% 40%, rgba(196,18,31,.28), transparent 55%); pointer-events: none; }
+  .hero-text { position: relative; z-index: 2; padding: 120px clamp(16px, 6vw, 90px) 80px; }
+  .eyebrow { font-size: 12px; letter-spacing: .32em; text-transform: uppercase; color: var(--gold); }
+  .hero h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(54px, 8vw, 112px); line-height: .95; margin: 18px 0 26px; }
+  .hero h1 em { display: block; color: var(--red-2); }
+  .hero p.lead { max-width: 470px; color: var(--muted); font-size: 17px; margin-bottom: 36px; }
+  .hero .row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-img { position: relative; height: 100%; min-height: 100vh; min-height: 100svh; }
+  .hero-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
+  .hero-img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--bg) 0%, rgba(11,7,8,.35) 30%, transparent 60%), linear-gradient(0deg, var(--bg) 0%, transparent 25%); }
+  .status { display: inline-flex; align-items: center; gap: 10px; margin-top: 34px; font-size: 13px; color: var(--muted); border: 1px solid var(--line); padding: 8px 14px; background: rgba(20,12,14,.6); }
+  .status i { width: 8px; height: 8px; border-radius: 50%; background: #2ecc71; box-shadow: 0 0 0 4px rgba(46,204,113,.18); }
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; align-items: end; }
+    .hero-img { position: absolute; inset: 0; }
+    .hero-img::after { background: linear-gradient(0deg, var(--bg) 8%, rgba(11,7,8,.75) 45%, rgba(11,7,8,.25) 100%); }
+    .hero-text { padding-bottom: 56px; }
+  }
+
+  /* ---------- Secciones ---------- */
+  section { padding: clamp(72px, 10vw, 130px) clamp(16px, 6vw, 90px); }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+  .head { text-align: center; margin-bottom: 56px; }
+  .head h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(38px, 5vw, 60px); line-height: 1.05; margin-top: 12px; }
+  .head p { color: var(--muted); max-width: 560px; margin: 16px auto 0; }
+  .divider { width: 60px; height: 1px; background: var(--red); margin: 22px auto 0; }
+
+  /* Sobre mí */
+  .about { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(32px, 6vw, 90px); align-items: center; }
+  .about-img { position: relative; }
+  .about-img img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center 20%; }
+  .about-img::before { content: ""; position: absolute; inset: 18px -18px -18px 18px; border: 1px solid var(--red); z-index: -1; }
+  .about h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(38px, 5vw, 58px); line-height: 1.05; margin: 12px 0 24px; }
+  .about p { color: var(--muted); margin-bottom: 18px; }
+  .about blockquote { font-family: var(--serif); font-style: italic; font-size: 26px; line-height: 1.3; color: var(--text); border-left: 2px solid var(--red); padding-left: 20px; margin: 30px 0; }
+  .values { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .values span { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; border: 1px solid var(--line); padding: 7px 14px; color: var(--muted); }
+  @media (max-width: 860px) { .about { grid-template-columns: 1fr; } .about-img { max-width: 440px; margin-right: 18px; } }
+
+  /* Servicios */
+  #servicios { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .modes { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .mode { background: var(--card); border: 1px solid var(--line); padding: clamp(28px, 4vw, 48px); position: relative; overflow: hidden; }
+  .mode::after { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--red); }
+  .mode .flag { font-size: 12px; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); }
+  .mode h3 { font-family: var(--serif); font-weight: 500; font-size: 36px; margin: 8px 0 6px; }
+  .mode .sub { color: var(--muted); font-size: 14px; margin-bottom: 26px; }
+  .mode ul { list-style: none; display: grid; gap: 2px; }
+  .mode li { display: flex; gap: 14px; align-items: baseline; padding: 12px 0; border-bottom: 1px solid rgba(58,28,33,.6); }
+  .mode li:last-child { border-bottom: 0; }
+  .mode li b { font-weight: 500; color: var(--text); min-width: 0; }
+  .mode li small { display: block; color: var(--muted); font-size: 13px; }
+  .mode li::before { content: "◆"; color: var(--red-2); font-size: 9px; transform: translateY(-2px); }
+  @media (max-width: 860px) { .modes { grid-template-columns: 1fr; } }
+
+  /* Tarifas */
+  .prices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .price { border: 1px solid var(--line); padding: 40px 28px; text-align: center; background: linear-gradient(180deg, var(--card), var(--bg)); transition: border-color .25s, transform .25s; }
+  .price:hover { border-color: var(--red); transform: translateY(-4px); }
+  .price.feat { border-color: var(--red); }
+  .price .tag { font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); }
+  .price h3 { font-family: var(--serif); font-weight: 500; font-size: 28px; margin: 10px 0 4px; }
+  .price .dur { color: var(--muted); font-size: 14px; }
+  .price .amount { font-family: var(--serif); font-size: 62px; line-height: 1; margin: 26px 0 6px; color: var(--text); }
+  .price .amount small { font-size: 24px; color: var(--red-2); }
+  .price .note { color: var(--muted); font-size: 13px; margin-bottom: 28px; }
+  .price .btn { width: 100%; justify-content: center; }
+  .fine { text-align: center; color: var(--muted); font-size: 13px; margin-top: 30px; }
+  @media (max-width: 960px) { .prices { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; } }
+
+  /* Galería */
+  #galeria { background: var(--bg-2); border-top: 1px solid var(--line); }
+  .gallery { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+  .gallery button { border: 0; padding: 0; background: none; cursor: zoom-in; overflow: hidden; position: relative; aspect-ratio: 3/4.5; }
+  .gallery img { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; transition: transform .6s, filter .4s; filter: saturate(.9); }
+  .gallery button:hover img { transform: scale(1.05); filter: saturate(1.1); }
+  @media (max-width: 960px) { .gallery { grid-template-columns: repeat(2, 1fr); } .gallery button:first-child { grid-column: span 2; aspect-ratio: 4/4.2; } }
+
+  #lightbox { position: fixed; inset: 0; z-index: 90; background: rgba(5,3,4,.95); display: none; place-items: center; padding: 16px; }
+  #lightbox.open { display: grid; }
+  #lightbox img { max-height: 90vh; max-width: 100%; object-fit: contain; }
+  #lightbox .x { position: absolute; top: 14px; right: 18px; background: none; border: 0; color: var(--text); font-size: 34px; cursor: pointer; line-height: 1; }
+  #lightbox .nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(20,12,14,.7); border: 1px solid var(--line); color: var(--text); width: 46px; height: 46px; font-size: 22px; cursor: pointer; }
+  #lightbox .prev { left: 14px; } #lightbox .next { right: 14px; }
+
+  /* Normas */
+  .rules { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .rule { border-top: 1px solid var(--red); padding-top: 22px; }
+  .rule .n { font-family: var(--serif); font-size: 34px; color: var(--red-2); }
+  .rule h3 { font-family: var(--serif); font-weight: 500; font-size: 24px; margin: 6px 0 8px; }
+  .rule p { color: var(--muted); font-size: 14px; }
+  @media (max-width: 960px) { .rules { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .rules { grid-template-columns: 1fr; } }
+
+  /* Manifiesto */
+  .manifesto { text-align: center; border-bottom: 1px solid var(--line); background: radial-gradient(ellipse at center, rgba(120,10,20,.25), transparent 70%); }
+  .manifesto p.big { font-family: var(--serif); font-size: clamp(30px, 4.6vw, 58px); line-height: 1.15; max-width: 980px; margin: 0 auto; }
+  .manifesto p.big em { color: var(--red-2); }
+  .manifesto p.small { color: var(--muted); max-width: 600px; margin: 26px auto 0; font-size: 16px; }
+
+  /* Pasos */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .step { background: var(--card); border: 1px solid var(--line); padding: 34px 28px; }
+  .step .n { font-family: var(--serif); font-size: 54px; line-height: 1; color: var(--red-2); }
+  .step h3 { font-family: var(--serif); font-weight: 500; font-size: 28px; margin: 12px 0 10px; }
+  .step p { color: var(--muted); font-size: 15px; }
+  @media (max-width: 860px) { .steps { grid-template-columns: 1fr; } }
+
+  /* Contacto */
+  #contacto { position: relative; overflow: hidden; text-align: center; }
+  #contacto::before { content: ""; position: absolute; inset: 0; background: url("img/cristina-mazmorra.webp") center 30% / cover; opacity: .18; }
+  #contacto::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent, var(--bg) 75%); }
+  #contacto .wrap { position: relative; z-index: 2; }
+  .phones { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 760px; margin: 0 auto; }
+  .phone { background: rgba(26,16,18,.88); border: 1px solid var(--line); padding: 32px 24px; }
+  .phone .country { font-size: 12px; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); }
+  .phone .num { font-family: var(--serif); font-size: 30px; margin: 10px 0 4px; }
+  .phone p { color: var(--muted); font-size: 13px; margin-bottom: 22px; }
+  .phone .btn { width: 100%; justify-content: center; }
+  @media (max-width: 700px) { .phones { grid-template-columns: 1fr; } }
+
+  footer { border-top: 1px solid var(--line); padding: 34px 16px; text-align: center; color: var(--muted); font-size: 12px; }
+  footer .logo { font-size: 20px; margin-bottom: 8px; color: var(--text); }
+
+  /* Botón flotante WhatsApp */
+  .float { position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: #25d366; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(0,0,0,.45); transition: transform .2s; }
+  .float:hover { transform: scale(1.07); }
+  .float svg { width: 30px; height: 30px; fill: #fff; }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+
+  /* ---------- Textos legales ---------- */
+  .legal-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin: 14px 0 12px; }
+  .legal-links a { color: var(--muted); font-size: 12px; letter-spacing: .06em; border-bottom: 1px solid transparent; transition: color .2s, border-color .2s; cursor: pointer; }
+  .legal-links a:hover { color: var(--text); border-color: var(--red-2, #e3303c); }
+  footer .adult-note { margin-top: 6px; opacity: .8; }
+  .contact-legal { max-width: 640px; margin: 28px auto 0; color: var(--muted); font-size: 12px; line-height: 1.6; position: relative; z-index: 2; }
+  .contact-legal a, #gate a[data-legal] { color: var(--text); border-bottom: 1px solid var(--red-2, #e3303c); cursor: pointer; }
+
+  #legal { position: fixed; inset: 0; z-index: 250; display: grid; place-items: center; padding: 16px; background: rgba(5,3,4,.88); backdrop-filter: blur(6px); opacity: 0; visibility: hidden; transition: opacity .3s, visibility .3s; }
+  #legal.open { opacity: 1; visibility: visible; }
+  #legal .panel { width: min(860px, calc(100vw - 32px)); min-width: 0; max-height: min(88vh, 900px); display: flex; flex-direction: column; background: var(--bg-2, #120a0c); border: 1px solid var(--line); box-shadow: 0 40px 120px rgba(0,0,0,.6); transform: translateY(16px); transition: transform .35s; }
+  #legal.open .panel { transform: none; }
+  #legal .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 22px; border-bottom: 1px solid var(--line); }
+  #legal .top h2 { font-family: var(--serif); font-weight: 500; font-size: 26px; }
+  #legal .close { background: none; border: 0; color: var(--text); font-size: 32px; line-height: 1; cursor: pointer; }
+  #legal .top, #legal .tabs { flex: none; }
+  #legal .body { flex: 1; min-height: 0; }
+  #legal .tabs { display: flex; gap: 4px; padding: 10px 14px 0; border-bottom: 1px solid var(--line); overflow-x: auto; scrollbar-width: none; }
+  #legal .tabs::-webkit-scrollbar { display: none; }
+  #legal .tabs button { flex: none; background: none; border: 0; border-bottom: 2px solid transparent; color: var(--muted); font: 500 12px var(--sans); letter-spacing: .08em; text-transform: uppercase; padding: 10px 12px; cursor: pointer; }
+  #legal .tabs button[aria-selected="true"] { color: var(--text); border-color: var(--red-2, #e3303c); }
+  #legal .body { overflow-y: auto; padding: 26px clamp(18px, 4vw, 40px) 34px; overscroll-behavior: contain; }
+  #legal article { overflow-wrap: break-word; display: none; color: var(--muted); font-size: 14px; line-height: 1.7; }
+  #legal article.on { display: block; }
+  #legal article h3 { font-family: var(--serif); font-weight: 500; color: var(--text); font-size: 30px; margin-bottom: 4px; }
+  #legal article h4 { color: var(--text); font: 600 13px var(--sans); letter-spacing: .08em; text-transform: uppercase; margin: 24px 0 8px; }
+  #legal article p, #legal article li { margin-bottom: 10px; }
+  #legal article ul { padding-left: 20px; }
+  #legal article .upd { font-size: 12px; color: var(--gold); margin-bottom: 18px; letter-spacing: .06em; }
+  #legal article table { width: 100%; border-collapse: collapse; margin: 8px 0 14px; font-size: 13px; }
+  #legal article th, #legal article td { text-align: left; vertical-align: top; border: 1px solid var(--line); padding: 8px 10px; }
+  #legal article th { color: var(--text); font-weight: 500; width: 32%; }
+  #legal .fill { color: #ffd37a; border: 1px dashed rgba(255,211,122,.6); padding: 0 4px; overflow-wrap: anywhere; }
+  #legal a { color: var(--text); border-bottom: 1px solid var(--red-2, #e3303c); }
+  @media (max-width: 560px) { #legal article th { width: 40%; } }
+</style>
+</head>
+<body class="locked">
+
+<!-- Aviso de mayoría de edad -->
+<div id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+  <div class="box">
+    <div class="mono">Contenido para adultos</div>
+    <h2 id="gate-title">¿Eres mayor de 18 años?</h2>
+    <p>Esta web contiene contenido BDSM y fetichista dirigido exclusivamente a personas adultas. Al entrar confirmas que eres mayor de edad y que este contenido es legal en tu país. Al entrar aceptas el <a href="#aviso-legal" data-legal="aviso">Aviso legal y privacidad</a>.</p>
+    <div class="row">
+      <button class="btn" id="gate-yes">Sí, entrar</button>
+      <a class="btn ghost" href="https://www.google.com">No, salir</a>
+    </div>
+  </div>
+</div>
+
+<header id="top">
+  <a href="#" class="logo">Mistress <span>Cristina</span></a>
+  <nav>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#tarifas">Tarifas</a>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<main>
+  <!-- Portada -->
+  <section class="hero" style="padding:0">
+    <div class="hero-text">
+      <div class="eyebrow">Dominación · BDSM · Fetiche</div>
+      <h1>Mistress <em>Cristina</em></h1>
+      <p class="lead">Llevas tiempo fantaseando con esto. Con alguien que te mire desde arriba, que no te pida permiso y que sepa exactamente qué hacer contigo. Deja de imaginarlo: aquí mando yo.</p>
+      <div class="row">
+        <a class="btn" href="#contacto">Atrévete a escribirme</a>
+        <a class="btn ghost" href="#servicios">Ver servicios</a>
+      </div>
+      <div class="status"><i></i> Ahora mismo en Colombia · sesiones presenciales disponibles</div>
+    </div>
+    <div class="hero-img">
+      <img src="img/cristina-rojo-sofa.webp" alt="Mistress Cristina sentada en un sofá de cuero negro con mono de vinilo rojo">
+    </div>
+  </section>
+
+  <!-- Manifiesto -->
+  <section class="manifesto">
+    <div class="wrap reveal">
+      <div class="eyebrow" style="margin-bottom:22px">Bienvenido, sumiso</div>
+      <p class="big">No estás aquí por casualidad. Estás aquí porque necesitas <em>obedecer</em>, y en el fondo sabes que conmigo no vas a poder decir que no.</p>
+      <p class="small">Fuera eres el que decide. Aquí dejas el control en la puerta, bajas la mirada y haces lo que yo diga. Así de sencillo.</p>
+    </div>
+  </section>
+
+  <!-- Sobre mí -->
+  <section id="sobre-mi">
+    <div class="wrap about">
+      <div class="about-img reveal">
+        <img src="img/cristina-negro-latigo.webp" alt="Mistress Cristina con mono negro y látigo" loading="lazy">
+      </div>
+      <div class="reveal">
+        <div class="eyebrow">Sobre mí</div>
+        <h2>Una dama en la calle. Tu Ama a puerta cerrada.</h2>
+        <p>Soy Mistress Cristina, dominatrix profesional. Elegante, exigente y con mucha experiencia. Sé leer lo que quieres antes de que te atrevas a confesarlo, y sé llevarte un paso más allá de donde creías que llegabas.</p>
+        <p>Antes de empezar hablamos: me cuentas tus fantasías y tus límites, y yo los respeto. Después, el ritmo lo marco yo. Tú solo tienes que obedecer y disfrutar de haber perdido el control.</p>
+        <blockquote>“Tu obediencia empieza en el momento en que decides escribirme.”</blockquote>
+        <div class="values">
+          <span>Profesionalidad</span><span>Discreción absoluta</span><span>Consentimiento</span><span>Respeto mutuo</span><span>Confidencialidad</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">Servicios</div>
+        <h2>Elige cómo quieres arrodillarte</h2>
+        <p>Desde España, te domino a distancia: no hace falta tenerme delante para sentir quién manda. En Colombia, en persona y sin filtros: todos mis servicios.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="modes">
+        <article class="mode reveal">
+          <div class="flag">España · Virtual</div>
+          <h3>A distancia</h3>
+          <p class="sub">Mi voz, mis órdenes, tu obediencia. Estés donde estés.</p>
+          <ul>
+            <li><div><b>Dominación financiera</b><small>Tu cartera también me pertenece. Para quien disfruta pagando a su Ama.</small></div></li>
+            <li><div><b>Dominación a distancia</b><small>Te pongo tareas y normas, y tú me rindes cuentas.</small></div></li>
+            <li><div><b>Chat BDSM</b><small>Cada mensaje mío, una orden. Cada respuesta tuya, una prueba.</small></div></li>
+            <li><div><b>Videollamadas</b><small>Mírame a los ojos… si te dejo.</small></div></li>
+            <li><div><b>Llamadas por WhatsApp</b><small>Solo mi voz al oído diciéndote qué hacer.</small></div></li>
+          </ul>
+        </article>
+        <article class="mode reveal">
+          <div class="flag">Colombia · Presencial</div>
+          <h3>En persona</h3>
+          <p class="sub">Frente a frente. Todos los servicios, con tus límites pactados antes.</p>
+          <ul>
+            <li><div><b>Humillación</b><small>Te pondré en tu sitio, y te va a encantar.</small></div></li>
+            <li><div><b>Sometimiento</b><small>Rendición total a mis órdenes.</small></div></li>
+            <li><div><b>Bondage</b><small>Atado, inmóvil y a mi merced.</small></div></li>
+            <li><div><b>Fetichismo de pies</b><small>Tu sitio está a mis pies. Literalmente.</small></div></li>
+            <li><div><b>Adoración</b><small>Venerar a tu Ama como se merece.</small></div></li>
+            <li><div><b>Facesitting</b><small>El trono más deseado eres tú.</small></div></li>
+            <li><div><b>Roleplay</b><small>Tu fantasía, mi guion. Profesora, jefa, carcelera…</small></div></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tarifas -->
+  <section id="tarifas">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">Tarifas</div>
+        <h2>El precio de servirme</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="prices">
+        <div class="price reveal">
+          <div class="tag">Virtual · España</div>
+          <h3>Media hora</h3>
+          <div class="dur">30 minutos</div>
+          <div class="amount">50<small>€</small></div>
+          <div class="note">Chat, llamada o videollamada</div>
+          <a class="btn ghost" href="https://wa.me/34613617031?text=Hola%20Mistress%20Cristina%2C%20quiero%20reservar%20una%20sesi%C3%B3n%20virtual%20de%20media%20hora." target="_blank" rel="noopener">Reservar</a>
+        </div>
+        <div class="price feat reveal">
+          <div class="tag">Virtual · España</div>
+          <h3>Una hora</h3>
+          <div class="dur">60 minutos</div>
+          <div class="amount">80<small>€</small></div>
+          <div class="note">Chat, llamada o videollamada</div>
+          <a class="btn" href="https://wa.me/34613617031?text=Hola%20Mistress%20Cristina%2C%20quiero%20reservar%20una%20sesi%C3%B3n%20virtual%20de%20una%20hora." target="_blank" rel="noopener">Reservar</a>
+        </div>
+        <div class="price reveal">
+          <div class="tag">Presencial · Colombia</div>
+          <h3>Una hora</h3>
+          <div class="dur">60 minutos</div>
+          <div class="amount">180.000<small> COP</small></div>
+          <div class="note">Todos los servicios presenciales</div>
+          <a class="btn ghost" href="https://wa.me/573216148834?text=Hola%20Mistress%20Cristina%2C%20quiero%20reservar%20una%20sesi%C3%B3n%20presencial%20en%20Colombia." target="_blank" rel="noopener">Reservar</a>
+        </div>
+      </div>
+      <p class="fine">Las sesiones se reservan con antelación por WhatsApp. Los buenos sumisos no hacen esperar a su Ama.</p>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section id="galeria">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">Galería</div>
+        <h2>Mírame bien</h2>
+        <p>Es lo más cerca que vas a estar de mí… hasta que te ganes una sesión.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="gallery reveal">
+        <button data-i="0"><img src="img/cristina-rojo-silla.webp" alt="Mistress Cristina con mono rojo y pala" loading="lazy"></button>
+        <button data-i="1"><img src="img/cristina-salon.webp" alt="Mistress Cristina con vestido negro en un salón" loading="lazy"></button>
+        <button data-i="2"><img src="img/cristina-mazmorra.webp" alt="Mistress Cristina de espaldas con mono negro y látigo" loading="lazy"></button>
+        <button data-i="3"><img src="img/cristina-negro-latigo.webp" alt="Mistress Cristina con látigo" loading="lazy"></button>
+        <button data-i="4"><img src="img/cristina-rojo-sofa.webp" alt="Mistress Cristina en sofá de cuero" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo empezar -->
+  <section id="empezar" style="background:var(--bg-2);border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">Cómo empezar</div>
+        <h2>Tres pasos hasta mis pies</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><div class="n">01</div><h3>Escríbeme</h3><p>Por WhatsApp y con respeto. Preséntate y dime qué tipo de sesión buscas. Sin rodeos.</p></div>
+        <div class="step reveal"><div class="n">02</div><h3>Confiesa</h3><p>Cuéntame tus fantasías y tus límites. Nada de lo que digas me va a sorprender, y todo queda entre tú y yo.</p></div>
+        <div class="step reveal"><div class="n">03</div><h3>Obedece</h3><p>Reservamos tu sesión. A partir de ahí, ya no decides tú.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Normas -->
+  <section id="normas">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">Antes de escribirme</div>
+        <h2>Mis normas</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="rules">
+        <div class="rule reveal"><div class="n">I</div><h3>Solo adultos</h3><p>Trabajo únicamente con personas mayores de 18 años.</p></div>
+        <div class="rule reveal"><div class="n">II</div><h3>Consentimiento</h3><p>Todo se habla y se pacta antes. Tus límites se respetan siempre.</p></div>
+        <div class="rule reveal"><div class="n">III</div><h3>Discreción</h3><p>Lo que pasa en una sesión es confidencial. Tus datos no se comparten.</p></div>
+        <div class="rule reveal"><div class="n">IV</div><h3>Respeto</h3><p>Escribe con educación y claridad. Las faltas de respeto no tienen respuesta.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">Contacto</div>
+        <h2>¿A qué esperas?</h2>
+        <p>Tu Ama te está esperando. Escríbeme por WhatsApp al número que te toque según dónde estés, y no me hagas esperar.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="phones">
+        <div class="phone reveal">
+          <div class="country">España · Virtual</div>
+          <div class="num">+34 613 617 031</div>
+          <p>Sesiones a distancia y dominación financiera</p>
+          <a class="btn" href="https://wa.me/34613617031?text=Hola%20Mistress%20Cristina%2C%20vengo%20de%20tu%20web." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.4-1.5-5.2 0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.3-18.1C18.1 1.5 15.1.3 12 .3 5.5.3.3 5.5.3 12c0 2.1.5 4.1 1.6 5.9L.2 24l6.3-1.6c1.7.9 3.6 1.4 5.5 1.4 6.5 0 11.7-5.2 11.7-11.7 0-3.1-1.2-6.1-3.4-8.4z"/></svg>
+            WhatsApp España
+          </a>
+        </div>
+        <div class="phone reveal">
+          <div class="country">Colombia · Presencial</div>
+          <div class="num">+57 321 614 8834</div>
+          <p>Sesiones en persona con todos los servicios</p>
+          <a class="btn" href="https://wa.me/573216148834?text=Hola%20Mistress%20Cristina%2C%20vengo%20de%20tu%20web." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.4-1.5-5.2 0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.3-18.1C18.1 1.5 15.1.3 12 .3 5.5.3.3 5.5.3 12c0 2.1.5 4.1 1.6 5.9L.2 24l6.3-1.6c1.7.9 3.6 1.4 5.5 1.4 6.5 0 11.7-5.2 11.7-11.7 0-3.1-1.2-6.1-3.4-8.4z"/></svg>
+            WhatsApp Colombia
+          </a>
+        </div>
+      </div>
+      <p class="contact-legal reveal">Al escribirme por WhatsApp aceptas el <a href="#aviso-legal" data-legal="aviso">Aviso legal y privacidad</a>. Todo lo que me cuentes es confidencial.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="logo">Mistress <span style="color:var(--red-2);font-style:italic">Cristina</span></div>
+  <div class="legal-links" role="navigation" aria-label="Información legal">
+    <a href="#aviso-legal" data-legal="aviso">Aviso legal y privacidad</a>
+  </div>
+  <div>© <span id="year"></span> Mistress Cristina. Solo para mayores de 18 años.</div>
+</footer>
+
+<a class="float" href="https://wa.me/573216148834?text=Hola%20Mistress%20Cristina%2C%20vengo%20de%20tu%20web." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.4-1.5-5.2 0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.3-18.1C18.1 1.5 15.1.3 12 .3 5.5.3.3 5.5.3 12c0 2.1.5 4.1 1.6 5.9L.2 24l6.3-1.6c1.7.9 3.6 1.4 5.5 1.4 6.5 0 11.7-5.2 11.7-11.7 0-3.1-1.2-6.1-3.4-8.4z"/></svg>
+</a>
+
+<div id="lightbox" aria-hidden="true">
+  <button class="x" aria-label="Cerrar">×</button>
+  <button class="nav prev" aria-label="Anterior">‹</button>
+  <img alt="">
+  <button class="nav next" aria-label="Siguiente">›</button>
+</div>
+
+<script>
+  // Aviso +18 (se recuerda en este navegador)
+  const gate = document.getElementById('gate');
+  let ok = false;
+  try { ok = localStorage.getItem('mc_18') === '1'; } catch (e) {}
+  const enter = () => { gate.classList.add('hide'); document.body.classList.remove('locked'); };
+  if (ok) enter();
+  document.getElementById('gate-yes').addEventListener('click', () => {
+    try { localStorage.setItem('mc_18', '1'); } catch (e) {}
+    enter();
+  });
+
+  // Cabecera sólida al hacer scroll
+  const header = document.getElementById('top');
+  const onScroll = () => header.classList.toggle('solid', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // Aparición suave de secciones
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Galería con visor
+  const imgs = [...document.querySelectorAll('.gallery img')].map(i => i.src);
+  const lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img');
+  let cur = 0;
+  const show = i => { cur = (i + imgs.length) % imgs.length; lbImg.src = imgs[cur]; };
+  const open = i => { show(i); lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false'); document.body.classList.add('locked'); };
+  const close = () => { lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); document.body.classList.remove('locked'); };
+  document.querySelectorAll('.gallery button').forEach(b => b.addEventListener('click', () => open(+b.dataset.i)));
+  lb.querySelector('.x').addEventListener('click', close);
+  lb.querySelector('.prev').addEventListener('click', e => { e.stopPropagation(); show(cur - 1); });
+  lb.querySelector('.next').addEventListener('click', e => { e.stopPropagation(); show(cur + 1); });
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(cur - 1);
+    if (e.key === 'ArrowRight') show(cur + 1);
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<div id="legal" role="dialog" aria-modal="true" aria-labelledby="legal-title" aria-hidden="true">
+  <div class="panel">
+    <div class="top">
+      <h2 id="legal-title">Aviso legal y privacidad</h2>
+      <button class="close" aria-label="Cerrar">×</button>
+    </div>
+    <div class="body">
+      <article data-doc="aviso" class="on">
+        <div class="upd">Última actualización: 7 de octubre de 2026</div>
+
+        <h4>1. Titular del sitio</h4>
+        <p>Este sitio web pertenece a <b>Mistress Cristina</b> (nombre artístico), que ofrece sesiones de dominación, BDSM y fetichismo entre adultos: virtuales desde España y presenciales en Colombia.</p>
+        <p>Contacto:</p>
+        <ul>
+          <li>WhatsApp España: <a href="https://wa.me/34613617031" target="_blank" rel="noopener">+34 613 617 031</a></li>
+          <li>WhatsApp Colombia: <a href="https://wa.me/573216148834" target="_blank" rel="noopener">+57 321 614 8834</a></li>
+        </ul>
+
+        <h4>2. Contenido para adultos</h4>
+        <p>Este sitio contiene material exclusivo para personas mayores de 18 años. Al entrar, cada visitante confirma que es mayor de edad y que acepta ver este contenido bajo su responsabilidad. Todas las personas que aparecen en la web son mayores de edad.</p>
+        <p>Las páginas llevan la etiqueta de contenido para adultos (RTA), que reconocen los buscadores y los programas de control parental para bloquearlas a menores.</p>
+
+        <h4>3. Propiedad intelectual</h4>
+        <p>Las fotografías, los textos y el diseño de esta web pertenecen a Mistress Cristina o se usan con su autorización. Queda prohibido copiarlos, reproducirlos, distribuirlos o modificarlos sin su permiso expreso.</p>
+
+        <h4>4. Privacidad y protección de datos</h4>
+        <ul>
+          <li>Esta web no usa cookies de publicidad ni de seguimiento, no tiene formularios y no recoge datos personales.</li>
+          <li>Solo guarda en tu navegador un dato técnico para recordar que has confirmado ser mayor de edad, y así no volver a preguntártelo. Puedes borrarlo cuando quieras desde los ajustes de tu navegador.</li>
+          <li>Las tipografías se cargan desde Google Fonts, que recibe datos técnicos de la conexión, como la dirección IP.</li>
+          <li>Si contactas por WhatsApp, la conversación se rige también por la política de privacidad de WhatsApp. Lo que cuentes, incluidas tus preferencias y límites, se trata con total confidencialidad, solo para atenderte y preparar tu sesión, y nunca se comparte con nadie.</li>
+          <li>Puedes pedir en cualquier momento que se borren tus datos o tus conversaciones escribiendo por WhatsApp. Si crees que no se respetan tus derechos de protección de datos (RGPD), puedes reclamar ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es" target="_blank" rel="noopener">aepd.es</a>) o, en Colombia, ante la Superintendencia de Industria y Comercio (<a href="https://www.sic.gov.co" target="_blank" rel="noopener">sic.gov.co</a>).</li>
+        </ul>
+
+        <h4>5. Pagos y enlaces externos</h4>
+        <p>Los pagos se hacen a través de servicios de terceros, como bancos o plataformas de pago, que aplican sus propias condiciones y políticas de privacidad.</p>
+        <p>Los botones de contacto llevan a WhatsApp, un servicio externo con sus propias políticas. Mistress Cristina no se hace responsable del contenido ni del funcionamiento de servicios de terceros.</p>
+
+        <h4>6. Responsabilidad</h4>
+        <p>La información de esta web, incluidos los precios, es orientativa y puede cambiar sin previo aviso. Las condiciones de cada sesión se acuerdan directamente antes de reservarla. Mistress Cristina no se hace responsable del mal uso de la web ni del acceso de menores que hayan mentido sobre su edad.</p>
+      </article>
+    </div>
+  </div>
+</div>
+<script id="legal-js">
+(() => {
+  const box = document.getElementById('legal');
+  const body = box.querySelector('.body');
+  const gateOpen = () => { const g = document.getElementById('gate'); return g && !g.classList.contains('hide'); };
+  const open = () => { body.scrollTop = 0; box.classList.add('open'); box.setAttribute('aria-hidden', 'false'); document.body.classList.add('locked'); };
+  const close = () => {
+    box.classList.remove('open'); box.setAttribute('aria-hidden', 'true');
+    if (!gateOpen()) document.body.classList.remove('locked');
+    if (location.hash === '#aviso-legal') history.replaceState(null, '', location.pathname + location.search);
+  };
+  document.addEventListener('click', e => {
+    if (!e.target.closest('[data-legal]')) return;
+    e.preventDefault(); e.stopPropagation(); open();
+  }, true);
+  box.querySelector('.close').addEventListener('click', close);
+  box.addEventListener('click', e => { if (e.target === box) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && box.classList.contains('open')) close(); });
+  // Enlace directo: web.com/#aviso-legal
+  const fromHash = () => { if (location.hash === '#aviso-legal') open(); };
+  addEventListener('hashchange', fromHash); fromHash();
+})();
+</script>
+</body>
+</html>
